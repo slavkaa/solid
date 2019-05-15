@@ -4,10 +4,10 @@
 class User implements iAuth
 {
     /** @var string */
-    private $login;
+    protected $login;
 
     /** @var string */
-    private $password;
+    protected $password;
 
     /**
      * @return string
@@ -23,5 +23,21 @@ class User implements iAuth
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * @param string $login
+     */
+    public function setLogin(string $login)
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function sePassword(string $password)
+    {
+        $this->password = sha1($password);
     }
 }
