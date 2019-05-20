@@ -4,7 +4,7 @@ class Auth
 {
     private $logger;
 
-    public function __construct($logger = null)
+    public function __construct(iLogger $logger = null)
     {
         if ($logger) {
             $this->logger = $logger;
